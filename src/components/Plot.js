@@ -1,9 +1,11 @@
+import React, { useState, useEffect } from 'react';
+import ReactFC from "react-fusioncharts";
 import FusionCharts from "fusioncharts";
 import TimeSeries from "fusioncharts/fusioncharts.timeseries";
-import ReactFC from "react-fusioncharts";
 
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
+
+// Important; Imports timeseries
+ReactFC.fcRoot(FusionCharts, TimeSeries);
 
 const Plot = (coin) => {
   let hasUid = coin['uid'].length
@@ -20,8 +22,9 @@ const Plot = (coin) => {
       
       data = res[0]
       schema = res[1]
+      
+
       var dataStore = new FusionCharts.DataStore();
-  
       var realtimeChart = new FusionCharts({
         type: "timeseries",
         renderAt: "realtimechart-container",
