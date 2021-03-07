@@ -12,10 +12,9 @@ const Plot = (coin) => {
   let data
   let schema
   if(hasUid){
-    
     let uid = coin['uid']
     let coinName = coin['coin']
-    console.log("UID", uid)
+    
     fetch("/volume/ohlc/"+uid, {mode: 'cors'})
     .then(response => response.json())
     .then(res => {
@@ -35,6 +34,7 @@ const Plot = (coin) => {
             theme: "fusion"
           },
           data: dataStore.createDataTable(data, schema),
+          plotToolText : "foakfoksofkokf",
           caption: {
             text: coinName+" Price Chart"
           },

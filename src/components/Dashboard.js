@@ -26,8 +26,6 @@ const Dashboard = () => {
 
     const [tableData, setTableData] = useState([])
 
-    const [ohlcData, setOhlcData] = useState([])
-
     const [uid, setUid] = useState([])
 
     const [coin, setCoin] = useState([])
@@ -124,12 +122,6 @@ const Dashboard = () => {
         let coin = tableMeta['rowData'][0]
         setCoin(coin+"BTC")
         setUid(uid)
-        // fetch('/volume/stats/'+uid, {mode: 'cors'})
-        // .then(response => response.json())
-        // .then(data => {
-        //     setOhlcData(data)
-        //     setUid(uid)
-        // });
     }
 
     const classes = useStyles();
